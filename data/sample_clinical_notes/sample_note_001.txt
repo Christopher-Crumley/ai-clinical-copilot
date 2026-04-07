@@ -1,0 +1,41 @@
+PATIENT: Jane Doe | DOB: 1975-03-14 | MRN: 00123456
+DATE: 2024-10-21
+PROVIDER: Dr. Sarah Kim, MD
+
+CHIEF COMPLAINT
+Patient presents with a 3-day history of productive cough, low-grade fever, and fatigue.
+
+HISTORY OF PRESENT ILLNESS
+Jane is a 49-year-old female with a past medical history of type 2 diabetes (controlled, A1C 6.8% at last check 4 months ago) and mild persistent asthma. She reports onset of cough approximately 72 hours ago. The cough is productive with yellow-green sputum. She has had a subjective fever, measured at home at 100.4°F. She denies shortness of breath at rest but reports mild exertional dyspnea. No chest pain. No recent travel. No sick contacts known. She has been using her albuterol inhaler twice daily with partial relief.
+
+MEDICATIONS
+- Metformin 1000 mg PO BID
+- Albuterol MDI PRN
+- Fluticasone/Salmeterol 250/50 mcg inhaled BID
+
+ALLERGIES
+NKDA
+
+REVIEW OF SYSTEMS
+Positive: Cough, fever, fatigue, mild dyspnea on exertion
+Negative: No chest pain, no hemoptysis, no wheezing at rest, no nausea/vomiting, no rash
+
+PHYSICAL EXAM
+Vitals: Temp 100.6°F | HR 92 | BP 128/82 | RR 18 | O2 Sat 97% on RA
+General: Mild distress, fatigued appearing
+Lungs: Decreased breath sounds at right lower lobe. Dullness to percussion right base. Crackles right lower lobe.
+Cardiovascular: Regular rate and rhythm. No murmurs.
+Abdomen: Soft, non-tender
+
+ASSESSMENT
+1. Community-acquired pneumonia (right lower lobe) — likely bacterial given productive cough, focal consolidation findings, and fever
+2. Type 2 diabetes — continue current regimen, monitor glucose during illness
+3. Asthma — increased rescue inhaler use; consider short course oral corticosteroids if not improving
+
+PLAN
+1. Start Azithromycin 500 mg PO x1, then 250 mg PO daily x4 days
+2. Order chest X-ray to confirm RLL consolidation
+3. CBC with differential, BMP
+4. Encourage oral fluids, rest
+5. Return if O2 sat drops below 94%, respiratory distress worsens, or no improvement in 48–72 hours
+6. Follow up in 5–7 days or sooner PRN
