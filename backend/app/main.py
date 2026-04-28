@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import chat, ingest, health
-from app.core.config import settings
 from app.core.logging import setup_logging
 
 setup_logging()
