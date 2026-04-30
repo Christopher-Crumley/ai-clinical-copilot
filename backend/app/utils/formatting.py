@@ -1,5 +1,3 @@
-from typing import Optional
-
 
 def format_soap_note(
     subjective: str,
