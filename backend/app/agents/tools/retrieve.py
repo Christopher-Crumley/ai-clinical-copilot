@@ -1,15 +1,16 @@
 import logging
 from typing import List
 
+from app.services.rag_service import RAGService
+
 logger = logging.getLogger(__name__)
 
 
-async def retrieve_context(query: str, top_k: int = 5) -> List[dict]:
-    """
-    Tool: retrieve relevant chunks from Pinecone for a given query.
-
-    Phase 3: wire to RAGService.retrieve()
-    Returns list of {content, score, metadata}
-    """
+async def retrieve_context(
+    query: str,
+    rag_service: RAGService,
+    top_k: int = 5,
+) -> List[dict]:
+    """Retrieve relevant chunks from Pinecone for a given query."""
     logger.info(f"Tool: retrieve_context | query='{query[:60]}' top_k={top_k}")
-    return []
+    return await rag_service.retrieve(query, top_k=top_k)
