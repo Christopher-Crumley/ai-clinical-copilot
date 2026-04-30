@@ -13,7 +13,16 @@ class Source(BaseModel):
     metadata: dict = {}
 
 
+class SoapNote(BaseModel):
+    subjective: str
+    objective: str
+    assessment: str
+    plan: str
+
+
 class ChatResponse(BaseModel):
     message: str
     sources: List[Source] = []
     session_id: Optional[str] = None
+    soap_note: Optional[SoapNote] = None
+    summary: Optional[str] = None
