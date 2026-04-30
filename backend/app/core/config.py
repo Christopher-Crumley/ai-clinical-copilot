@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     chunk_size: int = 500
     chunk_overlap: int = 75
     top_k: int = 5
+    allowed_origins: list[str] = ["http://localhost:3000"]
 
     model_config = {
         "env_file": str(ROOT_DIR / ".env"),
