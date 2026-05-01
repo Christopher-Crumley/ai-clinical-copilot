@@ -1,11 +1,11 @@
 import logging
 from fastapi import APIRouter
 from app.schemas.chat import ChatRequest, ChatResponse
-from app.services.agent_service import AgentService
+from app.agents.clinical_agent import ClinicalAgent
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
-agent = AgentService()
+agent = ClinicalAgent()
 
 
 @router.post("/chat", response_model=ChatResponse)
