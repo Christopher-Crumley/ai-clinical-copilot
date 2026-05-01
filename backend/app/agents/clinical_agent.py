@@ -1,5 +1,5 @@
 import logging
-from typing import Optional
+from typing import AsyncIterator, Optional
 
 from openai import AsyncOpenAI
 
@@ -93,3 +93,41 @@ class ClinicalAgent:
             "soap_note": soap_note,
             "summary": summary,
         }
+
+    async def stream(
+        self, message: str, session_id: Optional[str] = None
+    ) -> AsyncIterator[str]:
+        history = list(_chat_history.get(session_id, [])) if session_id else []
+
+        chunks = await retrieve_context(message, self.rag_service, top_k=settings.top_k)
+        context = "\n\n".join(c["content"] for c in chunks)
+
+        system_content = (
+            "You are a clinical documentation assistant. "
+            "Answer the user's question using the provided clinical context. "
+            "Be concise and accurate."
+        )
+        if context:
+            system_content += f"\n\nRelevant clinical context:\n{context}"
+
+        messages = [{"role": "system", "content": system_content}]
+        messages.extend(history[-_MAX_HISTORY:])
+        messages.append({"role": "user", "content": message})
+
+        tokens: list[str] = []
+        async with await self.client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+            stream=True,
+        ) as stream:
+            async for chunk in stream:
+                token = chunk.choices[0].delta.content
+                if token:
+                    tokens.append(token)
+                    yield token
+
+        if session_id:
+            response_text = "".join(tokens)
+            history.append({"role": "user", "content": message})
+            history.append({"role": "assistant", "content": response_text})
+            _chat_history[session_id] = history[-_MAX_HISTORY:]
